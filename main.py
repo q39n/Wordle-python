@@ -1,4 +1,4 @@
-import random, sys, nltk, replit
+import random, nltk, replit
 from termcolor import colored
 from nltk.corpus import words
 
@@ -37,7 +37,10 @@ replit.clear()
 print_board()
 
 word = random.choice(words_five).lower()
-for i in range(0, 5):
+for i in range(0, 6):
+    if i == 5:
+        print(f"You Finshe all attempts you have :( \n\n The word was: {word}")
+        break
     guess = input().lower()
     
     for index ,letter in enumerate(guess):
@@ -53,7 +56,4 @@ for i in range(0, 5):
     print_board()
     if guess == word:
         print(f"Gongrats You Won in {i + 1} attempts !")
-        break
-    elif i == 5:
-        print(f"You Finshe all attempts you have :( \n\n The word was: {word}")
         break

@@ -36,8 +36,8 @@ words_five = [word for word in word_list if len(word) == 5]
 replit.clear()
 print_board()
 
-word = random.choice(words_five)
-for i in range(5):
+word = random.choice(words_five).lower()
+for i in range(0, 5):
     guess = input().lower()
     
     for index ,letter in enumerate(guess):
@@ -55,4 +55,5 @@ for i in range(5):
         print(f"Gongrats You Won in {i + 1} attempts !")
         break
     elif i == 5:
-        print("")
+        print(f"You Finshe all attempts you have :( \n\n The word was: {word}")
+        break
